@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <title>Upcoming Movies - Moviemate</title>
+   <title>Premieres - Moviemate</title>
    <style>
       body {
          max-width: 100%;
@@ -142,7 +142,7 @@
    <div class="nav-1">
       <h1 id="lg">MOVIE MATE</h1>
       <div class="left">
-         <input type="text" class="sbox" placeholder="Search for upcoming movies...">
+         <input type="text" class="sbox" placeholder="Search premieres...">
          <button class="btn-custom">Search</button>
       </div>
       <div class="opt">
@@ -159,25 +159,25 @@
       <a href="upcoming.html">Upcoming</a>
    </div>
 
-   <h2>Upcoming Movies</h2>
+   <h2>Exclusive Premieres</h2>
    <div class="container">
       <div class="box">
-         <img src="p5.jpeg" class="poster" alt="Upcoming Movie 1">
-         <h4>Dune: Part Two</h4>
-         <p>Releasing Next Month</p>
-         <button class="btn-custom" style="margin-top: 10px;" onclick="alert('Added to Watchlist!')">Remind Me</button>
+         <img src="b3.jpg" class="poster" alt="Premiere 1">
+         <h4>Mission: Impossible 8</h4>
+         <p>Early Screening</p>
+         <button class="btn-custom" style="margin-top: 10px;" onclick="window.location.href='movie.html'; localStorage.setItem('selectedMovie', 'Mission Impossible 8 Premiere')">Book Now</button>
       </div>
       <div class="box">
-         <img src="p2.jpg" class="poster" alt="Upcoming Movie 2">
-         <h4>Deadpool 3</h4>
-         <p>Coming this Summer</p>
-         <button class="btn-custom" style="margin-top: 10px;" onclick="alert('Added to Watchlist!')">Remind Me</button>
+         <img src="b4.jpg" class="poster" alt="Premiere 2" style="filter: sepia(0.3);">
+         <h4>Red Notice 2</h4>
+         <p>Red Carpet Event</p>
+         <button class="btn-custom" style="margin-top: 10px;" onclick="window.location.href='movie.html'; localStorage.setItem('selectedMovie', 'Red Notice 2 Premiere')">Book Now</button>
       </div>
       <div class="box">
-         <img src="l3.jpg" class="poster" alt="Upcoming Movie 3">
-         <h4>Spider-Man: Beyond</h4>
-         <p>Coming Later This Year</p>
-         <button class="btn-custom" style="margin-top: 10px;" onclick="alert('Added to Watchlist!')">Remind Me</button>
+         <img src="b5.jpg" class="poster" alt="Premiere 3" style="filter: brightness(1.2);">
+         <h4>Avatar 3</h4>
+         <p>3D Early Access</p>
+         <button class="btn-custom" style="margin-top: 10px;" onclick="window.location.href='movie.html'; localStorage.setItem('selectedMovie', 'Avatar 3 Premiere')">Book Now</button>
       </div>
    </div>
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <title>Upcoming Movies - Moviemate</title>
+   <title>Events - Moviemate</title>
    <style>
       body {
          max-width: 100%;
@@ -62,7 +62,7 @@
          display: flex;
          flex-direction: column;
          align-items: center;
-         width: 250px;
+         width: 280px;
          height: 100%;
          background-color: white;
          border-radius: 12px;
@@ -77,7 +77,7 @@
       }
       .box > .poster {
          width: 100%;
-         height: 350px;
+         height: 200px;
          object-fit: cover;
          border-radius: 8px;
          margin-bottom: 10px;
@@ -142,7 +142,7 @@
    <div class="nav-1">
       <h1 id="lg">MOVIE MATE</h1>
       <div class="left">
-         <input type="text" class="sbox" placeholder="Search for upcoming movies...">
+         <input type="text" class="sbox" placeholder="Search for events...">
          <button class="btn-custom">Search</button>
       </div>
       <div class="opt">
@@ -159,25 +159,25 @@
       <a href="upcoming.html">Upcoming</a>
    </div>
 
-   <h2>Upcoming Movies</h2>
+   <h2>Upcoming Live Events</h2>
    <div class="container">
       <div class="box">
-         <img src="p5.jpeg" class="poster" alt="Upcoming Movie 1">
-         <h4>Dune: Part Two</h4>
-         <p>Releasing Next Month</p>
-         <button class="btn-custom" style="margin-top: 10px;" onclick="alert('Added to Watchlist!')">Remind Me</button>
+         <img src="b1.jpg" class="poster" alt="Event 1" style="filter: sepia(0.5);">
+         <h4>Kevin Hart: Reality Check</h4>
+         <p>Standup Comedy Show</p>
+         <button class="btn-custom" style="margin-top: 10px;" onclick="window.location.href='movie.html'; localStorage.setItem('selectedMovie', 'Kevin Hart Comedy')">Book Pass ($15)</button>
       </div>
       <div class="box">
-         <img src="p2.jpg" class="poster" alt="Upcoming Movie 2">
-         <h4>Deadpool 3</h4>
-         <p>Coming this Summer</p>
-         <button class="btn-custom" style="margin-top: 10px;" onclick="alert('Added to Watchlist!')">Remind Me</button>
+         <img src="b8.jpg" class="poster" alt="Event 2" style="filter: grayscale(0.8);">
+         <h4>Modern Art Gala 2025</h4>
+         <p>Exhibition & Networking</p>
+         <button class="btn-custom" style="margin-top: 10px;" onclick="window.location.href='movie.html'; localStorage.setItem('selectedMovie', 'Art Gala 2025')">Book Pass ($12)</button>
       </div>
       <div class="box">
-         <img src="l3.jpg" class="poster" alt="Upcoming Movie 3">
-         <h4>Spider-Man: Beyond</h4>
-         <p>Coming Later This Year</p>
-         <button class="btn-custom" style="margin-top: 10px;" onclick="alert('Added to Watchlist!')">Remind Me</button>
+         <img src="b4.jpg" class="poster" alt="Event 3" style="filter: contrast(1.2);">
+         <h4>Tech Innovators Expo</h4>
+         <p>Global Tech Conference</p>
+         <button class="btn-custom" style="margin-top: 10px;" onclick="window.location.href='movie.html'; localStorage.setItem('selectedMovie', 'Tech Innovators Expo')">Book Pass ($45)</button>
       </div>
    </div>
 
