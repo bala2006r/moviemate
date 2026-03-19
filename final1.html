@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Ticket</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, rgb(162, 216, 162), rgb(102, 194, 102));
+            font-family: "Poppins", Arial, sans-serif;
+            margin: 0;
+        }
+        .ticket-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        .success-banner {
+            text-align: center;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        .success-banner h2 {
+            margin: 0;
+            font-size: 2.2rem;
+            color: white;
+        }
+        .success-banner p {
+            font-size: 1.1rem;
+            margin: 5px 0;
+            color: white;
+            opacity: 0.9;
+        }
+        .actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: 0.3s;
+            font-family: inherit;
+        }
+        .print-btn {
+            background-color: white;
+            color: rgb(28, 185, 120);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .print-btn:hover { background-color: #f0f0f0; }
+        .home-btn {
+            background-color: rgb(60, 60, 60);
+            color: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .home-btn:hover { background-color: rgb(40, 40, 40); }
+
+        @media print {
+            .ticket-container { gap: 0; }
+            .success-banner, .actions { display: none !important; }
+            body { background: white; }
+            .ticket {
+                box-shadow: none;
+                border: 2px solid #ccc;
+            }
+        }
+        .ticket {
+            display: flex;
+            background: white;
+            width: 500px;
+            border-radius: 12px;
+            box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        .ticket .left {
+            width: 70%;
+            padding: 20px;
+        }
+        .ticket .right {
+            width: 30%;
+            background: #222;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            position: relative;
+            padding: 10px;
+        }
+        .ticket .right::before {
+            content: "";
+            width: 15px;
+            height: 15px;
+            background: #f4f4f4;
+            border-radius: 50%;
+            position: absolute;
+            left: -7px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .ticket h2 {
+            margin: 0;
+            color: #333;
+        }
+        .ticket p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #555;
+        }
+        img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="ticket-container">
+        <div class="success-banner">
+            <h2>🎉 Booking Successful!</h2>
+            <p>Order ID: #<span id="orderId"></span></p>
+        </div>
+        
+        <div class="ticket">
+            <div class="left">
+                <h2 id="movieName">MOVIE NAME</h2>
+                <p><strong>Theater:</strong> Cineplex</p>
+                <p><strong>Date:</strong> <span id="selectedDate">N/A</span></p>
+                <p><strong>Time:</strong> <span id="selectedTime">N/A</span></p>
+                <p><strong>Seat:</strong> <span id="seatNumbers">N/A</span></p>
+            </div>
+            <div class="right">
+                <p><strong>ADMIT</strong></p>
+                <div id="qrcode"><img src="Untitled.png"></div>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button class="print-btn" onclick="window.print()">Print Ticket</button>
+            <button class="home-btn" onclick="window.location.href='movhome1.html'">Back to Home</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let orderIdStr = Math.floor(Math.random() * 900000) + 100000;
+            document.getElementById("orderId").textContent = "MM-" + orderIdStr;
+
+            let movie = localStorage.getItem("movie") || "MOVIE NAME";
+            let date = localStorage.getItem("date") || "Not Selected";
+            let time = localStorage.getItem("time") || "Not Selected";
+            let seats = JSON.parse(localStorage.getItem("seats")) || ["N/A"];
+
+            document.getElementById("movieName").textContent = movie;
+            document.getElementById("selectedDate").textContent = date;
+            document.getElementById("selectedTime").textContent = time;
+            document.getElementById("seatNumbers").textContent = seats.join(", ");
+
+            let qrData = `Movie: ${movie}\nDate: ${date}\nTime: ${time}\nSeats: ${seats.join(", ")}`;
+            QRCode.toCanvas(document.getElementById("qrcode"), qrData, function (error) {
+                if (error) console.error(error);
+            });
+        });
+    </script>
+</body>
+</html>
+

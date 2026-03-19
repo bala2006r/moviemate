@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Ticket</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: yellow;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+        .ticket {
+            display: flex;
+            background: white;
+            width: 450px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        .ticket .left {
+            width: 70%;
+            padding: 20px;
+        }
+        .ticket .right {
+            width: 30%;
+            background: #222;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            position: relative;
+            padding: 10px;
+        }
+        .ticket .right::before {
+            content: "";
+            width: 15px;
+            height: 15px;
+            background: #f4f4f4;
+            border-radius: 50%;
+            position: absolute;
+            left: -7px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .ticket h2 {
+            margin: 0;
+            color: #333;
+        }
+        .ticket p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #555;
+        }
+        .barcode {
+            margin-top: 10px;
+        }
+        img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="ticket">
+        <div class="left">
+            <h2 id="movieName">MOVIE NAME</h2>
+            <p><strong>Theater:</strong> Cineplex 10</p>
+            <p><strong>Date:</strong> <span id="selectedDate">N/A</span></p>
+            <p><strong>Time:</strong> <span id="selectedTime">N/A</span></p>
+            <p><strong>Seat:</strong> <span id="seatNumbers">N/A</span></p>
+        </div>
+        <div class="right">
+            <p><strong>ADMIT</strong></p>
+            <svg id="barcode"></svg>
+        </div>
+    </div>
+
+    <!-- <script src="https://cdn.jsdelivr.net/jsbarcode/3.11.0/JsBarcode.all.min.js"></script>
+    <script>
+        // Load details from localStorage
+        document.addEventListener("DOMContentLoaded", function () {
+            let movie = localStorage.getItem("movie") || "MOVIE NAME";
+            let date = localStorage.getItem("date") || "Not Selected";
+            let time = localStorage.getItem("time") || "Not Selected";
+            let seats = JSON.parse(localStorage.getItem("seats")) || ["N/A"];
+
+            // Update the page with the retrieved values
+            document.getElementById("movieName").textContent = movie;
+            document.getElementById("selectedDate").textContent = date;
+            document.getElementById("selectedTime").textContent = time;
+            document.getElementById("seatNumbers").textContent = seats.join(", ");
+            Confirm.html -->
+<!-- <script>
+ Final.html -->
+<!-- Final.html -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Retrieve data from localStorage
+      let movie = localStorage.getItem("movie") || "N/A";
+      let date = localStorage.getItem("date") || "N/A";
+      let time = localStorage.getItem("time") || "N/A";
+      let seats = JSON.parse(localStorage.getItem("seats")) || ["N/A"];
+      let price = localStorage.getItem("price") || "0";
+  
+      // Dynamically update the displayed values
+      document.getElementById("movieName").textContent = movie;
+      document.getElementById("selectedDate").textContent = date;
+      document.getElementById("selectedTime").textContent = time;
+      document.getElementById("seatNumbers").textContent = seats.join(", ");
+      document.getElementById("totalPrice").textContent = price;
+    });
+  </script>
+  
+
+   
+
+    </script>
+</body>
+</html>

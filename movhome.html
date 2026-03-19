@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<head>
+   <title>
+     Moviemate-book your Tickets!!
+   </title>
+   <style>
+      body
+      {
+         max-width: 100%;
+      }
+      .nav-1
+      {
+         width:100%;
+         height:100px;
+         background-color: cadetblue;
+
+      }
+      #lg
+      {
+         position: absolute;
+         font-size: 3rem;
+         font-style: bold;
+      }
+      .left{
+         position:relative;
+         left:400px;
+         top:50px;
+      }
+      .opt
+      {
+         position: relative;
+         left:1000px;
+         top:17px;
+      }
+      .nav2
+      {
+         display: flex;
+         background-color: turquoise;
+         gap:30px;
+      }
+
+      .opt ul{
+    list-style: none;
+  }
+.opt li{
+    display: inline;
+    margin-right: 10px;
+  }
+  section {
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 800px;
+    }
+    h2 {
+      color: #007BFF;
+      border-bottom: 2px solid #007BFF;
+      padding-bottom: 10px;
+    }
+    .container
+    {
+      display:flex;
+      gap:100px;
+      margin-left: 100px;
+
+    }
+    .box
+    {
+      display:flex;
+      flex-direction: column;
+      width:300px;
+      height:550px;
+      justify-content: center;
+      text-align: center;
+      background-color: beige;
+      border-radius: 5%;
+      padding:10px;
+      padding-top: 2px;
+       
+            padding-bottom: 20px;
+   }
+.container a
+{
+   text-decoration: none;
+   color:black;
+}
+   </style>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+   integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+</head>
+<body>
+   <div class="nav-1">
+      <h1 id="lg">MOVIE MATE</h1>
+      <div class="left">
+         
+         <input type="text" placeholder="search for movies...">
+         <button class="btn1">search</button>
+      </div>
+      <div class="opt">
+         <ul>
+            <li><a href="">loc</a></li>
+            <li><button class="sign">sign_up</button></li>
+         </ul>
+      </div>
+   </div>
+   <div class="nav2">
+      <p><a href="">home</a></p>
+      <p><a href="">events</a></p>
+      <p><a href="">concerts</a></p>
+      <p><a href="">premire</a></p>
+      <p><a href="">upcoming</a></p>
+   </div>
+   <br>
+   
+   <h2>UPCOMIMG MOVIES</h2>
+   <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img id="a" src="p5.jpeg" height="400px" width="700px" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img  id="a" src="p2.jpg" height="400px" width="700px"class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item active">
+         <img id="a" src="p6.jpeg" height="400px" width="700px" class="d-block w-100" alt="...">
+       </div>
+
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <br>
+    <br>
+    <div class="nav3">
+    <div class="d-flex gap-2 justify-content-center py-5">
+      <button class="btn btn-success rounded-pill px-3" type="button">Success</button>
+      <button class="btn btn-success rounded-pill px-3" type="button">Success</button>
+      <button class="btn btn-success rounded-pill px-3" type="button">Success</button>
+      <button class="btn btn-success rounded-pill px-3" type="button">Success</button>
+      
+    </div>
+    </div>
+    <h2>MOVIES</h2>
+    <div class="container">
+      <a href="movie.html" style="display: block; text-decoration: none;">
+      <div class="box">
+         <img src="b1.jpg">
+         <h4>THE MOVIE</h4>
+         <p><img src="hand-thumbs-up-fill (1).svg"> 2.5k likes</p>
+      </div>
+   </a>
+      <div class="box">
+         <img src="b1.jpg">
+         <h4>THE MOVIE</h4>
+         <p> 2.5k likes</p>
+      </div>
+      <div class="box">
+         <img src="b1.jpg">
+         <h4>THE MOVIE</h4>
+         <p>2.5k likes</p>
+      </div>
+      <br>
+    </div>
+    <br>
+    <br>
+    <div class="container">
+      <div class="box">
+         <img src="b1.jpg">
+         <br>
+         <h4>THE MOVIE</h4>
+         <p><img src="hand-thumbs-up-fill (1).svg"> 2.5k likes</p>
+      </div>
+      <div class="box">
+         <img src="b1.jpg">
+         <br>
+         <h4>THE MOVIE</h4>
+
+         <p><img src="star-fill.svg">8.2/10 10k Votes</p>
+      </div>
+      <div class="box">
+         <img src="b1.jpg">
+         <h4>THE MOVIE</h4>
+         <p>2.5k likes</p>
+      </div>
+      <br>
+    </div>
+    
+
+  
+</body>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ticket Confirmation</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background: linear-gradient(to right, rgb(162, 216, 162), rgb(102, 194, 102));
+        font-family: "Poppins", sans-serif;
+      }
+      .container {
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.2);
+        text-align: left;
+        max-width: 450px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      h2 {
+        color: #333;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .details {
+        margin: 20px 0;
+        font-size: 16px;
+        font-weight: 500;
+        color: #555;
+      }
+      .details p {
+        margin: 10px 0;
+      }
+      .highlight {
+        font-weight: 600;
+        color: rgb(28, 185, 120);
+      }
+      button {
+        background: rgb(60, 60, 60);
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        width: 100%;
+        font-weight: 600;
+        transition: 0.3s;
+      }
+      button:hover {
+        background: rgb(40, 40, 40);
+      }
+      .bt {
+        text-align: center;
+        margin-top: 20px;
+      }
+      .overlay {
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0,0,0,0.6);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+      .modal {
+        background: white;
+        padding: 40px 50px;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .spinner {
+        width: 50px;
+        height: 50px;
+        border: 5px solid #f3f3f3;
+        border-top: 5px solid rgb(28, 185, 120);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin-bottom: 20px;
+      }
+      @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+      #payment-status {
+        margin: 0;
+        color: #333;
+        font-weight: 600;
+        font-size: 18px;
+      }
+
+      .donate-now {
+        list-style-type: none;
+        margin: 20px 0 0 0;
+        padding: 0;
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+      }
+
+      .donate-now li {
+        width: 60px;
+        height: 40px;
+        position: relative;
+        cursor: pointer;
+      }
+
+.donate-now label,
+.donate-now input {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.donate-now input[type="radio"] {
+  opacity: 0.01;
+  z-index: 100;
+}
+
+.donate-now input[type="radio"]:checked+label,
+.Checked+label {
+  background: rgba(117, 238, 41, 0.5);
+  transform: scale(1.1);
+  color:#218838
+}
+
+.donate-now label {
+  padding: 5px;
+  border: 3px solid rgba(166, 240, 18, 0.7);
+  cursor: pointer;
+  z-index: 90;
+}
+
+.donate-now label:hover {
+  background: rgba(100, 225, 59, 0.864);
+}
+.pay
+{
+  width:70px;
+  height:40px;
+}
+    </style>
+  </head>
+  <body>
+    
+    <br>
+    <div class="container">
+      <h2>🎟 Ticket Confirmation</h2>
+      <div class="details">
+        <p>🎬 <b>Movie:</b> <span id="movieName">N/A</span></p>
+        <p>📅 <b>Date:</b> <span id="selectedDate">N/A</span></p>
+        <p>⏰ <b>Time:</b> <span id="selectedTime">N/A</span></p>
+        <p>💺 <b>Seats:</b> <span id="seatNumbers" class="highlight">N/A</span></p>
+        <p>💰 <b>Total Price:</b> ₹<span id="totalPrice">0</span></p>
+        <p>Choose your payment method:</p>
+       
+        <ul class="donate-now">
+          <li>
+            <input type="radio" id="a25" name="amount" />
+            <label for="a25"><img src="google-pay-brands-solid.svg" class="pay"></label>
+          </li>
+          <li>
+            <input type="radio" id="a50" name="amount" />
+            <label for="a50"><img src="cc-paypal-brands-solid.svg" class="pay"></label>
+          </li>
+          <li>
+            <input type="radio" id="a75" name="amount" checked="checked" />
+            <label for="a75"><img src="amazon-pay-brands-solid.svg" class="pay"></label>
+          </li>
+          <li>
+            <input type="radio" id="a100" name="amount" />
+            <label for="a100"><img src="apple-pay-brands-solid.svg" class="pay"></label>
+          </li>
+         
+        </ul>
+      </div>
+      </div>
+      </div>
+      <div class="bt">
+        <button onclick="processPayment()">Confirm Booking</button>
+      </div>
+    </div>
+
+    <div id="payment-overlay" class="overlay">
+      <div class="modal">
+        <div class="spinner"></div>
+        <h3 id="payment-status">Processing Payment...</h3>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let movie = localStorage.getItem("movie") || "Movie Name";
+        let seats = JSON.parse(localStorage.getItem("seats")) || [];
+        let date = localStorage.getItem("date") || "Not Selected";
+        let time = localStorage.getItem("time") || "Not Selected";
+        let price = localStorage.getItem("price") || 0;
+
+        document.getElementById("movieName").textContent = movie;
+        document.getElementById("seatNumbers").textContent = seats.join(", ");
+        document.getElementById("selectedDate").textContent = date;
+        document.getElementById("selectedTime").textContent = time;
+        document.getElementById("totalPrice").textContent = price;
+      }); 
+   
+
+      
+      
+  
+
+      function processPayment() {
+        const selectedMethod = document.querySelector('input[name="amount"]:checked');
+        let paymentType = "Payment Gateway";
+        if (selectedMethod) {
+            if(selectedMethod.id === 'a25') paymentType = "Google Pay";
+            else if(selectedMethod.id === 'a50') paymentType = "PayPal";
+            else if(selectedMethod.id === 'a75') paymentType = "Amazon Pay";
+            else if(selectedMethod.id === 'a100') paymentType = "Apple Pay";
+        }
+        
+        const overlay = document.getElementById('payment-overlay');
+        const status = document.getElementById('payment-status');
+        
+        status.textContent = `Connecting to ${paymentType}...`;
+        overlay.style.display = 'flex';
+        
+        setTimeout(() => {
+            status.textContent = "Processing Payment...";
+            setTimeout(() => {
+                status.textContent = "Payment Successful!";
+                document.querySelector('.spinner').style.display = 'none';
+                status.style.color = "green";
+                setTimeout(() => {
+                    window.location.href = "final1.html";
+                }, 1000);
+            }, 1500);
+        }, 1000);
+      }
+    </script> 
+  </body>
+</html>

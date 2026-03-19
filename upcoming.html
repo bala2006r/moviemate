@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Upcoming Movies - Moviemate</title>
+   <style>
+      body {
+         max-width: 100%;
+         background: linear-gradient(to right, rgb(162, 216, 162), rgb(102, 194, 102));
+         font-family: Arial, sans-serif;
+         margin: 0;
+      }
+      .nav-1 {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         padding: 20px 40px;
+         background-color: rgba(255, 255, 255, 0.2);
+         box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      }
+      #lg {
+         font-size: 3rem;
+         font-weight: bold;
+         color: white;
+         text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+         margin: 0;
+      }
+      .left {
+         display: flex;
+         align-items: center;
+         gap: 10px;
+         flex: 1;
+         justify-content: center;
+      }
+      .opt ul {
+         list-style: none;
+         display: flex;
+         gap: 15px;
+         margin: 0;
+         padding: 0;
+      }
+      .opt a, .nav2 a {
+         text-decoration: none;
+         color: white;
+         font-weight: bold;
+      }
+      .nav2 {
+         display: flex;
+         justify-content: center;
+         background-color: rgba(0, 0, 0, 0.1);
+         padding: 15px;
+         gap: 30px;
+      }
+      .container {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: center;
+         gap: 40px;
+         padding: 40px 20px;
+         min-height: 40vh;
+      }
+      .box {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         width: 250px;
+         height: 100%;
+         background-color: white;
+         border-radius: 12px;
+         padding: 15px;
+         text-align: center;
+         box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+         transition: 0.3s ease-in-out;
+      }
+      .box:hover {
+         transform: translateY(-5px);
+         box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.15);
+      }
+      .box > .poster {
+         width: 100%;
+         height: 350px;
+         object-fit: cover;
+         border-radius: 8px;
+         margin-bottom: 10px;
+      }
+      .btn-custom {
+         background-color: rgb(60, 60, 60);
+         color: white;
+         border: none;
+         padding: 10px 24px;
+         border-radius: 8px;
+         cursor: pointer;
+         font-weight: 600;
+         transition: 0.3s;
+      }
+      .btn-custom:hover {
+         background-color: rgb(40, 40, 40);
+      }
+      h2 {
+         color: white;
+         text-align: center;
+         font-size: 2.5rem;
+         margin-top: 40px;
+         margin-bottom: 20px;
+         text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+      }
+      h4 {
+         margin: 10px 0 5px 0;
+         color: #333;
+      }
+      .footer {
+         background-color: rgba(0, 0, 0, 0.1);
+         text-align: center;
+         padding: 40px 20px;
+         color: white;
+         margin-top: 50px;
+      }
+      .footer p, p {
+         color: #666;
+         font-size: 14px;
+      }
+      .footer p {
+         color: white;
+      }
+      .sbox {
+         width: 300px;
+         padding: 10px 15px;
+         border: none;
+         border-radius: 20px;
+         outline: none;
+      }
+      .socialmedia>img {
+         width:40px;
+         height:30px;
+         cursor: pointer;
+      }
+      a {
+         text-decoration: none;
+      }
+   </style>
+</head>
+<body>
+   <div class="nav-1">
+      <h1 id="lg">MOVIE MATE</h1>
+      <div class="left">
+         <input type="text" class="sbox" placeholder="Search for upcoming movies...">
+         <button class="btn-custom">Search</button>
+      </div>
+      <div class="opt">
+         <ul>
+            <li><a href="sign-up.html"><button class="btn-custom">Sign Up</button></a></li>
+         </ul>
+      </div>
+   </div>
+   <div class="nav2">
+      <a href="movhome1.html">Home</a>
+      <a href="events.html">Events</a>
+      <a href="concerts.html">Concerts</a>
+      <a href="premiere.html">Premiere</a>
+      <a href="upcoming.html">Upcoming</a>
+   </div>
+
+   <h2>Upcoming Movies</h2>
+   <div class="container">
+      <div class="box">
+         <img src="p5.jpeg" class="poster" alt="Upcoming Movie 1">
+         <h4>Dune: Part Two</h4>
+         <p>Releasing Next Month</p>
+         <button class="btn-custom" style="margin-top: 10px;" onclick="alert('Added to Watchlist!')">Remind Me</button>
+      </div>
+      <div class="box">
+         <img src="p2.jpg" class="poster" alt="Upcoming Movie 2">
+         <h4>Deadpool 3</h4>
+         <p>Coming this Summer</p>
+         <button class="btn-custom" style="margin-top: 10px;" onclick="alert('Added to Watchlist!')">Remind Me</button>
+      </div>
+      <div class="box">
+         <img src="l3.jpg" class="poster" alt="Upcoming Movie 3">
+         <h4>Spider-Man: Beyond</h4>
+         <p>Coming Later This Year</p>
+         <button class="btn-custom" style="margin-top: 10px;" onclick="alert('Added to Watchlist!')">Remind Me</button>
+      </div>
+   </div>
+
+   <div class="footer">
+      <p>&copy; 2025 Moviemate. All rights reserved.</p>
+      <p>Give us your valuable feedback by clicking the following button. If you have any queries or worries in our page please reach out by using the contact button.</p>
+      <button class="btn-custom">Feedback</button>
+      <button class="btn-custom">Contact Us</button>
+      <p>Thank you for using our website!</p>
+      <p>Follow us on</p>
+      <div class="socialmedia">
+         <img src="instagram.svg" alt="Instagram">
+         <img src="linkedin.svg" alt="LinkedIn">
+         <img src="facebook.svg" alt="Facebook">
+         <img src="whatsapp.svg" alt="WhatsApp">
+         <img src="youtube.svg" alt="YouTube">
+      </div>
+   </div>
+</body>
+</html>
